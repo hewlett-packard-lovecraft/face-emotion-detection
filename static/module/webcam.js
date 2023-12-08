@@ -57,9 +57,10 @@ export class Webcam {
 
         estimatedFaces.forEach((face) => {
             let faceTensor = this.vidCanvas.cropFace(face);
-            this.vidCanvas.drawBoundingBox(face);
-
             console.log(faceTensor); // pass this tensor into the emotion classification model once we've selected one
+            const emotion = "placeholder emotion text";
+
+            this.vidCanvas.drawBoundingBox(face, emotion);
         });
 
     }

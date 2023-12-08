@@ -8,6 +8,5 @@ app = Flask(__name__)
 def hello(): 
     return render_template('index.html')  
   
-# run the application 
 if __name__ == "__main__": 
     app.run(debug=True)

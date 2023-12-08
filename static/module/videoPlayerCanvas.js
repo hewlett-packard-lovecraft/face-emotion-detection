@@ -11,7 +11,7 @@ export class VideoPlayerCanvas {
         this.canvas.height = vid.videoHeight;
     }
 
-    drawBoundingBox(face) {
+    drawBoundingBox(face, emotion) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.ctx.lineWidth = "2";
@@ -25,7 +25,7 @@ export class VideoPlayerCanvas {
         this.ctx.rect(face.box.xMin, face.box.yMin, face.box.width, face.box.height)
         this.ctx.stroke();
 
-        this.ctx.fillText("emotion here", face.box.xMin + face.box.width / 2, face.box.yMin + face.box.height / 2);
+        this.ctx.fillText(emotion, face.box.xMin + face.box.width / 2, face.box.yMin + face.box.height / 2);
     }
 
     cropFace(face) {
