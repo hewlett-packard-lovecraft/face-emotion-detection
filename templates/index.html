@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>tensorflowjs test</title>
-    <link rel="stylesheet" href="./static/style.css" />
 
-    <!-- make favicon error go away-->
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-  </head>
-  <body>
-    <!-- Require the peer dependencies of face-detection. -->
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>tensorflowjs test</title>
+  <link rel="stylesheet" href="./static/style.css" />
 
-    <!-- You must explicitly require a TF.js backend if you're not using the TF.js union bundle. -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+  <!-- make favicon error go away-->
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-detection"></script>
+<body>
+  <!-- tfjs -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+  <!-- Require the peer dependencies of face-detection. -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
 
-    <script type="module" src="./static/index.js"></script>
-    <main>
-      <div id="video_player_div">
-        <div id="video_player_container">
-          <video id="video_player"></video>
-          <canvas id="video_canvas"></canvas>
-        </div>
+  <!-- You must explicitly require a TF.js backend if you're not using the TF.js union bundle. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-detection"></script>
+
+  <script type="module" src="./static/index.js"></script>
+  <main>
+    <div id="video_player_div">
+      <div id="video_player_container">
+        <video id="video_player"></video>
+        <canvas id="video_canvas"></canvas>
       </div>
-      <br />
-      <button id="but" autoplay>Open WebCam</button>
-    </main>
-  </body>
+    </div>
+    <br />
+    <button id="but" autoplay>Open WebCam</button>
+  </main>
+</body>
+
 </html>

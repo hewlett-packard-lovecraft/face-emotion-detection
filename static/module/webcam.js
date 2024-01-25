@@ -5,6 +5,8 @@
 
 import { VideoPlayerCanvas } from "./videoPlayerCanvas.js";
 
+
+
 export class Webcam {
     constructor() {
         this.video = document.getElementById("video_player");
