@@ -10,6 +10,7 @@ export class Webcam {
         this.video = document.getElementById("video_player");
         this.vidCanvas = undefined;
         this.faceDetector = undefined;
+        this.FERClassifier = undefined;
     }
 
     async loadModels() {
@@ -20,6 +21,8 @@ export class Webcam {
         };
 
         this.faceDetector = await faceDetection.createDetector(faceDetectionModel, detectorConfig);
+
+        this.FERClassifier = await tf.loadLayersModel(`https://${window.location.hostname}/weights/model.json`) // fix this later
     }
 
     enableWebcam() {
@@ -58,7 +61,8 @@ export class Webcam {
         estimatedFaces.forEach((face) => {
             let faceTensor = this.vidCanvas.cropFace(face);
             console.log(faceTensor); // pass this tensor into the emotion classification model once we've selected one
-            const emotion = "placeholder text"; // output of emotion classification model here
+
+            const emotion = this.FERClassifier.predict(tf.expand_dims(faceTensor, axis = 0), verbose = 0);
 
             this.vidCanvas.drawBoundingBox(face, emotion);
         });
