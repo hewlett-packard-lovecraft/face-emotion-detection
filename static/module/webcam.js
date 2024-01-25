@@ -64,7 +64,7 @@ export class Webcam {
             let faceTensor = this.vidCanvas.cropFace(face);
             console.log(faceTensor); // pass this tensor into the emotion classification model once we've selected one
 
-            const emotion = this.FERClassifier.predict(tf.expand_dims(faceTensor, 0), 0);
+            const emotion = this.FERClassifier.predict(faceTensor);
 
             this.vidCanvas.drawBoundingBox(face, emotion);
         });
