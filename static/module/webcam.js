@@ -24,7 +24,7 @@ export class Webcam {
 
         this.faceDetector = await faceDetection.createDetector(faceDetectionModel, detectorConfig);
 
-        this.FERClassifier = await tf.loadLayersModel(`https://${window.location.hostname}/static/fer_model_weights.json`) // fix this later
+        this.FERClassifier = await tf.loadLayersModel(`https://${window.location.hostname}/static/weights/model.json`) // fix this later
     }
 
     enableWebcam() {
